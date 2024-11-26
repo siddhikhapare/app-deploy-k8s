@@ -4,11 +4,12 @@ metadata:
   name: frontend-svc
 spec:
   ports:
-  - protocol: TCP          
-    port: 80
-    targetPort: 3000   
+    - protocol: TCP          
+      port: 80
+      targetPort: 3000   
   selector:
     app: frontend
+  type: LoadBalancer
 ---
 apiVersion: v1
 kind: Service
@@ -16,8 +17,9 @@ metadata:
   name: backend-svc
 spec:
   ports:
-  - protocol: TCP
-    port: 80          
-    targetPort: 4000   
+    - protocol: TCP
+      port: 80          
+      targetPort: 4000   
   selector:
     app: backend
+  type: LoadBalancer
