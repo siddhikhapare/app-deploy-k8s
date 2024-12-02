@@ -8,17 +8,17 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: ksiddhiapphub.org
+  - host: demo.ksiddhiapphub.org
     http:
       paths:
-      - path: /           # All requests to root (frontend)
+      - path: /           
         pathType: Prefix
         backend:
           service:
             name: frontend-svc
             port:
               number: 80
-      - path: /api        # All requests to /api (backend)
+      - path: /api        
         pathType: Prefix
         backend:
           service:
@@ -27,5 +27,5 @@ spec:
               number: 80
   tls:
   - hosts:
-    - ksiddhiapphub.org
+    - demo.ksiddhiapphub.org
     secretName: app

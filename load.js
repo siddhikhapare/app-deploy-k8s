@@ -6,7 +6,7 @@ export const options = {
   duration: '30s',
 };
 
-const BASE_URL = 'https://ksiddhiapphub.org'
+const BASE_URL = 'https://demo.ksiddhiapphub.org'
 
 function demo() {
   const url = `${BASE_URL}`;

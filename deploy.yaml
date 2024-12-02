@@ -16,6 +16,12 @@ spec:
       - name: frontend
         image: milkygalaxy/frontend:latest
         imagePullPolicy: Always
+        env:
+        - name: NEXT_PUBLIC_API_URL
+          valueFrom:
+            configmapKeyRef:
+              name: app-config
+              key: NEXT_PUBLIC_API_URL
         ports:
         - containerPort: 3000
         resources:
@@ -56,7 +62,7 @@ spec:
               name: my-postgresql-credentials
               key: password
         - name: POSTGRES_HOST
-          value: postgresql-rw.default.svc.cluster.local
+          value: postgres-svc
         - name: DB_PORT
           value: "5432"
         - name: POSTGRES_DB

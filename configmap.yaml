@@ -6,3 +6,4 @@ data:
   POSTGRES_USER: "myuser"
   POSTGRES_DB: "users_database"
   DB_PORT: "5432"
+  NEXT_PUBLIC_API_URL: "https://demo.ksiddhiapphub.org/api"

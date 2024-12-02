@@ -9,7 +9,6 @@ spec:
       targetPort: 3000   
   selector:
     app: frontend
-  type: LoadBalancer
 ---
 apiVersion: v1
 kind: Service
@@ -22,4 +21,17 @@ spec:
       targetPort: 4000   
   selector:
     app: backend
-  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-svc
+  labels:
+    role: db
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  clusterIP: None
+  selector:
+    role: db
