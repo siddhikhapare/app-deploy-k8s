@@ -18,10 +18,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: NEXT_PUBLIC_API_URL
-          valueFrom:
-            configmapKeyRef:
-              name: app-config
-              key: NEXT_PUBLIC_API_URL
+          value: https://demo.ksiddhiapphub.org/api
         ports:
         - containerPort: 3000
         resources:
